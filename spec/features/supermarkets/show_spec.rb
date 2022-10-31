@@ -23,6 +23,8 @@ RSpec.describe 'supermarket show page', type: :feature do
       visit "/supermarkets/#{@aldi.id}"
       # require 'pry'; binding.pry
       expect(page).to have_content("Shoppers: #{@jim.name} #{@mary.name}")
+      expect(page).to_not have_content("Shoppers: #{@steve.name}")
+
     end
 
   end 

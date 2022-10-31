@@ -25,6 +25,7 @@ RSpec.describe Supermarket, type: :model do
   it 'returns a list of customers who have shopped at a supermarket' do 
     # require 'pry'; binding.pry
     expect(@aldi.customer_list).to eq(['Jim', 'Mary'])
-  
+    expect(@aldi.customer_list).to_not eq(['Steve', 'Zoe'])
+
   end
 end
