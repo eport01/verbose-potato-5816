@@ -25,6 +25,5 @@ RSpec.describe Item, type: :model do
   it 'returns a count of customers that bought that item' do 
     expect(@rice.purchase_count).to eq(2)
     expect(@turkey.purchase_count).to eq(1)
-
   end
 end

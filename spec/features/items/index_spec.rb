@@ -25,6 +25,8 @@ RSpec.describe 'items index page', type: :feature do
     end
 
     it 'i see a count of customers that bought that each item' do 
+      visit '/items'
+
       expect(page).to have_content("Rice: $2, Aldi, 2 customers have bought this item")
 
     end
