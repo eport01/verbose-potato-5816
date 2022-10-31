@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Supermarket, type: :model do
   describe 'relationships' do
     it { should have_many :items }
+    it { should have_many(:customers).through(:items) }
+
   end
   before :each do 
     @whole_foods = Supermarket.create!(name: "Whole Foods", location: "Denver")
