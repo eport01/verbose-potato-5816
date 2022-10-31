@@ -2,3 +2,9 @@
 <%@customer.items.each do |item|%>
   <%= item.name%>, <%= item.price%>, <%= item.supermarket.name %>
 <%end%>
+
+<%= form_with url: "/customers/#{@customer.id}", method: :post, local: true do |f|%>
+  <%= label_tag :item_id, "Add an item to this customer"%>
+  <%= text_field_tag :item_id, params[:item_id]%>
+  <%= f.submit "Submit"%>
+<%end %>
