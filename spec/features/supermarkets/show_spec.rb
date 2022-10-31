@@ -1,7 +1,7 @@
-require 'rails_helper'
+require 'rails_helper' 
 
-RSpec.describe 'items index page', type: :feature do 
-  describe 'as a visitor to items index' do 
+RSpec.describe 'supermarket show page', type: :feature do 
+  describe 'as a visitor to the supermarket show page' do 
     before :each do 
       @whole_foods = Supermarket.create!(name: "Whole Foods", location: "Denver")
       @aldi = Supermarket.create!(name: "Aldi", location: "Aurora")
@@ -19,20 +19,9 @@ RSpec.describe 'items index page', type: :feature do
       CustomerItem.create!(customer: @jim, item: @rice)
     end
 
-    it 'i see a list of all of the items including name, price, and supermarket' do 
-      visit '/items'
-      expect(page).to have_content("Rice: $2, Aldi")
-      expect(page).to have_content("Cheese: $4, Aldi")
-      expect(page).to have_content("Turkey: $8, Whole Foods")
-
+    it 'i see a unique list of all customers that have shopped at supermarket' do 
+      
     end
 
-    it 'i see a count of customers that bought that each item' do 
-      visit '/items'
-
-      expect(page).to have_content("Rice: $2, Aldi, 2 customers have bought this item")
-      expect(page).to have_content("Cheese: $4, Aldi, 1 customers have bought this item")
-
-    end
-  end
-end
+  end 
+end 

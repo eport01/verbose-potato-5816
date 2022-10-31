@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   post '/customers/:id', to: 'customers#show'
 
   get '/items', to: 'items#index'
+  get '/supermarkets/:id', to: 'supermarkets#show'
 
 end

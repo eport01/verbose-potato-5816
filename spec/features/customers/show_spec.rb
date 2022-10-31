@@ -21,6 +21,7 @@ RSpec.describe 'customer show page', type: :feature do
     it 'lists customers name and all of their items and item attributes, and supermarket they belong to' do 
       visit "/customers/#{@mary.id}"
       expect(page).to have_content("Mary: Rice, 2, Aldi Cheese, 4, Aldi Turkey, 8, Whole Foods")
+      expect(page).to_not have_content("Jim: Rice, 2, Aldi")
     end
 
     it 'i can add an item to this customer' do 
@@ -31,7 +32,7 @@ RSpec.describe 'customer show page', type: :feature do
       fill_in :item_id, with: @grapes.id 
       click_button("Submit")
       expect(page).to have_content("Mary: Rice, 2, Aldi Cheese, 4, Aldi Turkey, 8, Whole Foods Grapes, 4, Whole Foods")
-      save_and_open_page
+      expect(page).to_not have_content("Jim: Rice, 2, Aldi")
 
     end
   end
