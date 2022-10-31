@@ -20,7 +20,9 @@ RSpec.describe 'supermarket show page', type: :feature do
     end
 
     it 'i see a unique list of all customers that have shopped at supermarket' do 
-      
+      visit "/supermarkets/#{@aldi.id}"
+      # require 'pry'; binding.pry
+      expect(page).to have_content("Shoppers: #{@jim.name} #{@mary.name}")
     end
 
   end 
